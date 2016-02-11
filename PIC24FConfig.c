@@ -138,7 +138,8 @@ char UART1GetChar()
  *************************************************************************************************************/
 void UART2Setup(float baudrate, float fosc)
 {
-    U2MODE = ENABLE_BIT | IRDA_ENABLE_BIT | WAKE_ENABLE | LOOPBACK_MODE | ENABLE_AUTO_MODE |  PARITY_DATA_SELECT | STOP_BIT_SELECT;
+    U2MODE = ENABLE_BIT | IRDA_ENABLE_BIT | WAKE_ENABLE | LOOPBACK_MODE |
+            ENABLE_AUTO_MODE | UART2_BRGH | PARITY_DATA_SELECT | STOP_BIT_SELECT;
     U2MODEbits.BRGH = 1;         // Disable the divider
     U2BRG = ((fosc*1E6*4.0/2.0)/(4.0*baudrate))/2-1.0;   //set baud speed
 
