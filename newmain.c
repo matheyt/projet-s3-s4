@@ -45,14 +45,8 @@ extern UINT8 volatile gl_synchro, gl_trame[2][40];
 extern float volatile gl_pr2;
 
 int main() {
-
-    UINT8 static s_framNum = 0;
-    float pwm_val;
-    float r5, ADCValue5, y5, x5; // Variable measurement by ADC for AN5
-    float r11, ADCValue11, y11, x11; // Variable measurement by ADC for AN11
     char Message[80]; // Payload size 100
-    char pwm[10];
-    unsigned int numTram = 0;
+
 
     /**************** Initialisation of destination address *****************/
     Addr ad;
@@ -61,9 +55,10 @@ int main() {
 
 
    
-    /********** Setup UART *********/
+    /********** Setup UART1 *********/
     UART1Setup(BAUDRATE, FOSC);
-
+    /********** Setup UART1 *********/
+    
     /* Setup I/O port (For testing LED) */
     TRISBbits.TRISB8 = 0;           // Set port B8 as output
     TRISBbits.TRISB15 = 0;          // Set port B15 as output
