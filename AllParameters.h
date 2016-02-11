@@ -31,6 +31,17 @@
 #define END_USER_PAYLOAD     0x0A
 #define SEPARATOR            0x3B
 
+#define ENABLE_BIT 0x8000
+#define IRDA_ENABLE_BIT 0x1000
+#define WAKE_ENABLE 0x0080
+#define LOOPBACK_MODE 0x0000
+#define ENABLE_AUTO_MODE 0x8000
+#define PARITY_DATA_SELECT 0x0000
+#define STOP_BIT_SELECT 0x0000
+
+
+
+
 /**************************** Unity *******************************/
 #define UNITY_CM         "cm"            // Unity in centimeter
 #define UNITY_MM         "mm"            // Unity in millimeter

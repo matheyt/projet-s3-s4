@@ -50,6 +50,16 @@ void UART1PutChar(char Ch);
 
 //UART receive function, returns the value received.
 char UART1GetChar();
+/**************************************************************************************************************
+ * UART2Setup : Configuration of uart2 and calculate the value of 16 bits BRG(Baud Rate Generator) as a
+ *              function of parameters baudrate and fosc
+ * Parameters : baudrate,float, desired speed
+ *              fosc,float, frequency oscillator in mega hertz (MHZ)
+ *************************************************************************************************************/
+void UART2Setup(float baudrate, float fosc);
+
+//UART receive function, return the value received
+char UART2GetChar();
 
 /*******************************************************************************************************
  * Setup 10 bits ADC converter using channel 5 and 11 whose alternates between multiplexer A and B

@@ -6,7 +6,7 @@ Tool Name:
 Command:
   -p24F16KA102 \
   -o \
-  dist/default/production/WiMODSendUartMsg.X.production.elf \
+  dist/default/debug/WiMODSendUartMsg.X.debug.elf \
   -Lc:/program files (x86)/microchip/xc16/v1.25/bin/bin/.. \
   -Lc:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib \
   -Lc:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../support/PIC24E/gld \
@@ -15,14 +15,22 @@ Command:
   -Lc:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../support/dsPIC30F/gld \
   -Lc:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../support/dsPIC33E/gld \
   -Lc:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../support/dsPIC33F/gld \
-  build/default/production/CRC16.o \
-  build/default/production/ComSlip.o \
-  build/default/production/PIC24FConfig.o \
-  build/default/production/SendUartMessage.o \
-  build/default/production/Service.o \
-  build/default/production/newmain.o \
+  build/default/debug/CRC16.o \
+  build/default/debug/ComSlip.o \
+  build/default/debug/PIC24FConfig.o \
+  build/default/debug/SendUartMessage.o \
+  build/default/debug/Service.o \
+  build/default/debug/newmain.o \
+  -TC:\\tmp00000fb4.00 \
+  -TC:\\tmp00000fb4.01 \
+  -TC:\\tmp00000fb4.02 \
+  -TC:\\tmp00000fb4.03 \
+  -TC:\\tmp00000fb4.04 \
   --defsym=__MPLAB_BUILD=1 \
-  -Tp24F16KA102.gld.00 \
+  --defsym=__MPLAB_DEBUG=1 \
+  --defsym=__DEBUG=1 \
+  --defsym=__MPLAB_DEBUGGER_PK3=1 \
+  -Tp24F16KA102.gld.05 \
   --stack=16 \
   --check-sections \
   --data-init \
@@ -34,10 +42,10 @@ Command:
   --stackguard=16 \
   --no-force-link \
   --smart-io \
-  -Map=dist/default/production/WiMODSendUartMsg.X.production.map \
+  -Map=dist/default/debug/WiMODSendUartMsg.X.debug.map \
   --report-mem \
   --memorysummary \
-  dist/default/production/memoryfile.xml \
+  dist/default/debug/memoryfile.xml \
   -start-group \
   --library=pic30-elf \
   --library=m-elf \
@@ -53,17 +61,17 @@ c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libpic30-elf.a(crt
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
                               c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o) (__data_init_standard)
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
-                              build/default/production/newmain.o (___delay32)
+                              build/default/debug/newmain.o (___delay32)
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libm-elf.a(addsf3.eo)
-                              build/default/production/PIC24FConfig.o (___subsf3)
+                              build/default/debug/PIC24FConfig.o (___subsf3)
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libm-elf.a(divsf3.eo)
-                              build/default/production/PIC24FConfig.o (___divsf3)
+                              build/default/debug/PIC24FConfig.o (___divsf3)
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libm-elf.a(fgtge.eo)
-                              build/default/production/PIC24FConfig.o (___gtsf2)
+                              build/default/debug/PIC24FConfig.o (___gtsf2)
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libm-elf.a(fixunssfsi.eo)
-                              build/default/production/PIC24FConfig.o (___fixunssfsi)
+                              build/default/debug/PIC24FConfig.o (___fixunssfsi)
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libm-elf.a(floatunsisf.eo)
-                              build/default/production/PIC24FConfig.o (___floatunsisf)
+                              build/default/debug/PIC24FConfig.o (___floatunsisf)
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libm-elf.a(fpack.eo)
                               c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libm-elf.a(addsf3.eo) (__fpack)
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libm-elf.a(funpack.eo)
@@ -73,19 +81,19 @@ c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libm-elf.a(funpack
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libm-elf.a(futil.eo)
                               c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libm-elf.a(addsf3.eo) (__fPropagateNaN)
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libm-elf.a(mulsf3.eo)
-                              build/default/production/PIC24FConfig.o (___mulsf3)
+                              build/default/debug/PIC24FConfig.o (___mulsf3)
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libm-elf.a(fcompare.eo)
                               c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libm-elf.a(fgtge.eo) (__fcompare)
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libm-elf.a(floatundisf.eo)
                               c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libm-elf.a(floatunsisf.eo) (___floatundisf)
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libc-elf.a(memcpy.eo)
-                              build/default/production/newmain.o (_memcpy)
+                              build/default/debug/newmain.o (_memcpy)
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libc-elf.a(puts.eo)
-                              build/default/production/SendUartMessage.o (_puts)
+                              build/default/debug/SendUartMessage.o (_puts)
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libc-elf.a(strchr.eo)
-                              build/default/production/Service.o (_strchr)
+                              build/default/debug/Service.o (_strchr)
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libc-elf.a(strlen.eo)
-                              build/default/production/newmain.o (_strlen)
+                              build/default/debug/newmain.o (_strlen)
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libc-elf.a(_iob.eo)
                               c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libc-elf.a(puts.eo) (__iob)
 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libc-elf.a(fputc.eo)
@@ -118,13 +126,18 @@ Data Memory  [Origin = 0x800, Length = 0x600]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.ndata                       0x800                   0           0x200  (512)
-.nbss                        0xa00                   0            0x5c  (92)
-.data                        0xa5c                   0            0x26  (38)
-.bss                         0xa82                   0             0x6  (6)
-.data                        0xa88                   0             0x2  (2)
+reserve_data_0x800           0x800                0x20            0x20  (32)
+reserve_data_0x820           0x820                 0x2             0x2  (2)
+reserve_data_0x822           0x822                 0x2             0x2  (2)
+reserve_data_0x824           0x824                 0x2             0x2  (2)
+reserve_data_0x826           0x826                0x2a            0x2a  (42)
+.ndata                       0x850                   0           0x200  (512)
+.nbss                        0xa50                   0            0x5c  (92)
+.data                        0xaac                   0            0x26  (38)
+.bss                         0xad2                   0             0x6  (6)
+.data                        0xad8                   0             0x2  (2)
 
-                        Total data memory used (bytes):          0x28a  (650) 42%
+                        Total data memory used (bytes):          0x2da  (730) 47%
 
 
 Dynamic Memory Usage
@@ -132,38 +145,38 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                        0xa8a                               0x376  (886)
+stack                        0xada                               0x326  (806)
 
-                        Maximum dynamic memory (bytes):          0x376  (886)
+                        Maximum dynamic memory (bytes):          0x326  (806)
 
 
 External Symbols in Data Memory (by address):
 
-                    0x0800                  _CRC16_Table
-                    0x0a00                  _gl_synchro
-                    0x0a01                  _gl_trame
-                    0x0a51                  _gl_nbovr
-                    0x0a58                  _gl_pr2
-                    0x0a5c                  __iob
-                    0x0a80                  __Files
-                    0x0a82                  __outdone
-                    0x0a83                  __sibuf
-                    0x0a85                  __sobuf
-                    0x0a88                  ___C30_UART
+                    0x0850                  _CRC16_Table
+                    0x0a50                  _gl_synchro
+                    0x0a51                  _gl_trame
+                    0x0aa1                  _gl_nbovr
+                    0x0aa8                  _gl_pr2
+                    0x0aac                  __iob
+                    0x0ad0                  __Files
+                    0x0ad2                  __outdone
+                    0x0ad3                  __sibuf
+                    0x0ad5                  __sobuf
+                    0x0ad8                  ___C30_UART
 
 External Symbols in Data Memory (by name):
 
-                    0x0800                  _CRC16_Table
-                    0x0a80                  __Files
-                    0x0a88                  ___C30_UART
-                    0x0a5c                  __iob
-                    0x0a82                  __outdone
-                    0x0a83                  __sibuf
-                    0x0a85                  __sobuf
-                    0x0a51                  _gl_nbovr
-                    0x0a58                  _gl_pr2
-                    0x0a00                  _gl_synchro
-                    0x0a01                  _gl_trame
+                    0x0850                  _CRC16_Table
+                    0x0ad0                  __Files
+                    0x0ad8                  ___C30_UART
+                    0x0aac                  __iob
+                    0x0ad2                  __outdone
+                    0x0ad3                  __sibuf
+                    0x0ad5                  __sobuf
+                    0x0aa1                  _gl_nbovr
+                    0x0aa8                  _gl_pr2
+                    0x0a50                  _gl_synchro
+                    0x0a51                  _gl_trame
 
 External Symbols in Program Memory (by address):
 
@@ -271,13 +284,41 @@ FDS              0xf80010           0x000002
 
 Linker script and memory map
 
-LOAD build/default/production/CRC16.o
-LOAD build/default/production/ComSlip.o
-LOAD build/default/production/PIC24FConfig.o
-LOAD build/default/production/SendUartMessage.o
-LOAD build/default/production/Service.o
-LOAD build/default/production/newmain.o
+LOAD build/default/debug/CRC16.o
+LOAD build/default/debug/ComSlip.o
+LOAD build/default/debug/PIC24FConfig.o
+LOAD build/default/debug/SendUartMessage.o
+LOAD build/default/debug/Service.o
+LOAD build/default/debug/newmain.o
+
+reserve_data_0x800
+                    0x0800         0x20
+                    0x0820                  . = 0x20
+ *fill*             0x0800         0x2000
+
+reserve_data_0x820
+                    0x0820          0x2
+                    0x0822                  . = 0x2
+ *fill*             0x0820          0x200
+
+reserve_data_0x822
+                    0x0822          0x2
+                    0x0824                  . = 0x2
+ *fill*             0x0822          0x200
+
+reserve_data_0x824
+                    0x0824          0x2
+                    0x0826                  . = 0x2
+ *fill*             0x0824          0x200
+
+reserve_data_0x826
+                    0x0826         0x2a
+                    0x0850                  . = 0x2a
+ *fill*             0x0826         0x2a00
                     0x0001                  __MPLAB_BUILD = 0x1
+                    0x0001                  __MPLAB_DEBUG = 0x1
+                    0x0001                  __DEBUG = 0x1
+                    0x0001                  __MPLAB_DEBUGGER_PK3 = 0x1
 LOAD pPIC24Fxxx
 LOAD c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libfx-elf.a
                     0xf80000                  __FBS = 0xf80000
@@ -314,7 +355,7 @@ LOAD c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libfx-elf.a
  *(.user_init)
  *(.handle)
  *(.isr*)
- .isr.text        0x00029a         0xbc build/default/production/Service.o
+ .isr.text        0x00029a         0xbc build/default/debug/Service.o
                   0x00029a                  __U1RXInterrupt
  .isr             0x000356          0x4 default_isr
                   0x000356                  __DefaultInterrupt
@@ -410,47 +451,47 @@ __FDS
 
 .debug_info       0x000000       0x2401
  *(.debug_info)
- .debug_info      0x000000        0x277 build/default/production/CRC16.o
- .debug_info      0x000277        0x1ae build/default/production/ComSlip.o
- .debug_info      0x000425       0x1226 build/default/production/PIC24FConfig.o
- .debug_info      0x00164b        0x2a3 build/default/production/SendUartMessage.o
- .debug_info      0x0018ee        0x591 build/default/production/Service.o
- .debug_info      0x001e7f        0x582 build/default/production/newmain.o
+ .debug_info      0x000000        0x277 build/default/debug/CRC16.o
+ .debug_info      0x000277        0x1ae build/default/debug/ComSlip.o
+ .debug_info      0x000425       0x1226 build/default/debug/PIC24FConfig.o
+ .debug_info      0x00164b        0x2a3 build/default/debug/SendUartMessage.o
+ .debug_info      0x0018ee        0x591 build/default/debug/Service.o
+ .debug_info      0x001e7f        0x582 build/default/debug/newmain.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x50f
  *(.debug_abbrev)
- .debug_abbrev    0x000000         0xa0 build/default/production/CRC16.o
- .debug_abbrev    0x0000a0         0x5b build/default/production/ComSlip.o
- .debug_abbrev    0x0000fb        0x19a build/default/production/PIC24FConfig.o
- .debug_abbrev    0x000295         0x96 build/default/production/SendUartMessage.o
- .debug_abbrev    0x00032b        0x10a build/default/production/Service.o
- .debug_abbrev    0x000435         0xda build/default/production/newmain.o
+ .debug_abbrev    0x000000         0xa0 build/default/debug/CRC16.o
+ .debug_abbrev    0x0000a0         0x5b build/default/debug/ComSlip.o
+ .debug_abbrev    0x0000fb        0x19a build/default/debug/PIC24FConfig.o
+ .debug_abbrev    0x000295         0x96 build/default/debug/SendUartMessage.o
+ .debug_abbrev    0x00032b        0x10a build/default/debug/Service.o
+ .debug_abbrev    0x000435         0xda build/default/debug/newmain.o
 
 .debug_line       0x000000        0x803
  *(.debug_line)
- .debug_line      0x000000         0xc0 build/default/production/CRC16.o
- .debug_line      0x0000c0         0xd2 build/default/production/ComSlip.o
- .debug_line      0x000192        0x2c3 build/default/production/PIC24FConfig.o
- .debug_line      0x000455        0x10f build/default/production/SendUartMessage.o
- .debug_line      0x000564        0x17e build/default/production/Service.o
- .debug_line      0x0006e2        0x121 build/default/production/newmain.o
+ .debug_line      0x000000         0xc0 build/default/debug/CRC16.o
+ .debug_line      0x0000c0         0xd2 build/default/debug/ComSlip.o
+ .debug_line      0x000192        0x2c3 build/default/debug/PIC24FConfig.o
+ .debug_line      0x000455        0x10f build/default/debug/SendUartMessage.o
+ .debug_line      0x000564        0x17e build/default/debug/Service.o
+ .debug_line      0x0006e2        0x121 build/default/debug/newmain.o
 
 .debug_frame      0x000000        0x138
  *(.debug_frame)
- .debug_frame     0x000000         0x34 build/default/production/CRC16.o
- .debug_frame     0x000034         0x24 build/default/production/ComSlip.o
- .debug_frame     0x000058         0x74 build/default/production/PIC24FConfig.o
- .debug_frame     0x0000cc         0x24 build/default/production/SendUartMessage.o
- .debug_frame     0x0000f0         0x24 build/default/production/Service.o
- .debug_frame     0x000114         0x24 build/default/production/newmain.o
+ .debug_frame     0x000000         0x34 build/default/debug/CRC16.o
+ .debug_frame     0x000034         0x24 build/default/debug/ComSlip.o
+ .debug_frame     0x000058         0x74 build/default/debug/PIC24FConfig.o
+ .debug_frame     0x0000cc         0x24 build/default/debug/SendUartMessage.o
+ .debug_frame     0x0000f0         0x24 build/default/debug/Service.o
+ .debug_frame     0x000114         0x24 build/default/debug/newmain.o
 
 .debug_str        0x000000         0xb7
  *(.debug_str)
- .debug_str       0x000000          0xc build/default/production/CRC16.o
- .debug_str       0x00000c         0x5d build/default/production/PIC24FConfig.o
- .debug_str       0x000069         0x30 build/default/production/Service.o
- .debug_str       0x000099         0x1e build/default/production/newmain.o
+ .debug_str       0x000000          0xc build/default/debug/CRC16.o
+ .debug_str       0x00000c         0x5d build/default/debug/PIC24FConfig.o
+ .debug_str       0x000069         0x30 build/default/debug/Service.o
+ .debug_str       0x000099         0x1e build/default/debug/newmain.o
 
 .debug_loc
  *(.debug_loc)
@@ -462,17 +503,17 @@ __FDS
                   0x000000        0x168
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0x41 build/default/production/CRC16.o
+                  0x000000         0x41 build/default/debug/CRC16.o
  .debug_pubnames
-                  0x000041         0x22 build/default/production/ComSlip.o
+                  0x000041         0x22 build/default/debug/ComSlip.o
  .debug_pubnames
-                  0x000063         0x79 build/default/production/PIC24FConfig.o
+                  0x000063         0x79 build/default/debug/PIC24FConfig.o
  .debug_pubnames
-                  0x0000dc         0x23 build/default/production/SendUartMessage.o
+                  0x0000dc         0x23 build/default/debug/SendUartMessage.o
  .debug_pubnames
-                  0x0000ff         0x4e build/default/production/Service.o
+                  0x0000ff         0x4e build/default/debug/Service.o
  .debug_pubnames
-                  0x00014d         0x1b build/default/production/newmain.o
+                  0x00014d         0x1b build/default/debug/newmain.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -480,17 +521,17 @@ __FDS
 .debug_aranges    0x000000         0x90
  *(.debug_aranges)
  .debug_aranges
-                  0x000000         0x18 build/default/production/CRC16.o
+                  0x000000         0x18 build/default/debug/CRC16.o
  .debug_aranges
-                  0x000018         0x18 build/default/production/ComSlip.o
+                  0x000018         0x18 build/default/debug/ComSlip.o
  .debug_aranges
-                  0x000030         0x18 build/default/production/PIC24FConfig.o
+                  0x000030         0x18 build/default/debug/PIC24FConfig.o
  .debug_aranges
-                  0x000048         0x18 build/default/production/SendUartMessage.o
+                  0x000048         0x18 build/default/debug/SendUartMessage.o
  .debug_aranges
-                  0x000060         0x18 build/default/production/Service.o
+                  0x000060         0x18 build/default/debug/Service.o
  .debug_aranges
-                  0x000078         0x18 build/default/production/newmain.o
+                  0x000078         0x18 build/default/debug/newmain.o
 
 .ivt              0x000004         0xfc
                   0x000004          0x4 LONG 0x356 DEFINED (__ReservedTrap0)?ABSOLUTE (__ReservedTrap0):ABSOLUTE (__DefaultInterrupt)
@@ -1152,39 +1193,39 @@ LOAD c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libpic30-elf.
 LOAD c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libm-elf.a
 LOAD c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libc-elf.a
 END GROUP
-OUTPUT(dist/default/production/WiMODSendUartMsg.X.production.elf elf32-pic30)
+OUTPUT(dist/default/debug/WiMODSendUartMsg.X.debug.elf elf32-pic30)
 LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
                   0x000090        0x295
  .debug_pubtypes
-                  0x000090         0x27 build/default/production/CRC16.o
+                  0x000090         0x27 build/default/debug/CRC16.o
  .debug_pubtypes
-                  0x0000b7         0x1c build/default/production/ComSlip.o
+                  0x0000b7         0x1c build/default/debug/ComSlip.o
  .debug_pubtypes
-                  0x0000d3        0x153 build/default/production/PIC24FConfig.o
+                  0x0000d3        0x153 build/default/debug/PIC24FConfig.o
  .debug_pubtypes
-                  0x000226         0x30 build/default/production/SendUartMessage.o
+                  0x000226         0x30 build/default/debug/SendUartMessage.o
  .debug_pubtypes
-                  0x000256         0x63 build/default/production/Service.o
+                  0x000256         0x63 build/default/debug/Service.o
  .debug_pubtypes
-                  0x0002b9         0x6c build/default/production/newmain.o
+                  0x0002b9         0x6c build/default/debug/newmain.o
 
 __c30_signature
                   0x000325         0xb4
  __c30_signature
-                  0x000325          0x6 build/default/production/CRC16.o
+                  0x000325          0x6 build/default/debug/CRC16.o
  __c30_signature
-                  0x00032b          0x6 build/default/production/ComSlip.o
+                  0x00032b          0x6 build/default/debug/ComSlip.o
  __c30_signature
-                  0x000331          0x6 build/default/production/PIC24FConfig.o
+                  0x000331          0x6 build/default/debug/PIC24FConfig.o
  __c30_signature
-                  0x000337          0x6 build/default/production/SendUartMessage.o
+                  0x000337          0x6 build/default/debug/SendUartMessage.o
  __c30_signature
-                  0x00033d          0x6 build/default/production/Service.o
+                  0x00033d          0x6 build/default/debug/Service.o
  __c30_signature
-                  0x000343          0x6 build/default/production/newmain.o
+                  0x000343          0x6 build/default/debug/newmain.o
  __c30_signature
                   0x000349          0x6 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
  __c30_signature
@@ -1234,66 +1275,66 @@ __c30_signature
  __c30_signature
                   0x0003d3          0x6 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libpic30-elf.a(c30_uart.eo)
 
-.ndata              0x0800        0x200
- .ndata             0x0800        0x200 build/default/production/CRC16.o
-                    0x0800                  _CRC16_Table
+.ndata              0x0850        0x200
+ .ndata             0x0850        0x200 build/default/debug/CRC16.o
+                    0x0850                  _CRC16_Table
 
-.nbss               0x0a00         0x5c
- .nbss              0x0a00         0x58 build/default/production/Service.o
-                    0x0a00                  _gl_synchro
-                    0x0a01                  _gl_trame
-                    0x0a51                  _gl_nbovr
- .nbss              0x0a58          0x4 build/default/production/PIC24FConfig.o
-                    0x0a58                  _gl_pr2
+.nbss               0x0a50         0x5c
+ .nbss              0x0a50         0x58 build/default/debug/Service.o
+                    0x0a50                  _gl_synchro
+                    0x0a51                  _gl_trame
+                    0x0aa1                  _gl_nbovr
+ .nbss              0x0aa8          0x4 build/default/debug/PIC24FConfig.o
+                    0x0aa8                  _gl_pr2
 
-.data               0x0a5c         0x26
- .data              0x0a5c         0x26 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libc-elf.a(_iob.eo)
-                    0x0a5c                  __iob
-                    0x0a80                  __Files
+.data               0x0aac         0x26
+ .data              0x0aac         0x26 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libc-elf.a(_iob.eo)
+                    0x0aac                  __iob
+                    0x0ad0                  __Files
 
-.bss                0x0a82          0x6
- .bss               0x0a82          0x6 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libc-elf.a(_iob.eo)
-                    0x0a82                  __outdone
-                    0x0a83                  __sibuf
-                    0x0a85                  __sobuf
+.bss                0x0ad2          0x6
+ .bss               0x0ad2          0x6 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libc-elf.a(_iob.eo)
+                    0x0ad2                  __outdone
+                    0x0ad3                  __sibuf
+                    0x0ad5                  __sobuf
 
-.data               0x0a88          0x2
- .data              0x0a88          0x2 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libpic30-elf.a(c30_uart.eo)
-                    0x0a88                  ___C30_UART
+.data               0x0ad8          0x2
+ .data              0x0ad8          0x2 c:/program files (x86)/microchip/xc16/v1.25/bin/bin/../../lib\libpic30-elf.a(c30_uart.eo)
+                    0x0ad8                  ___C30_UART
 
 .config_DSWDTEN
                   0xf80010          0x2
  .config_DSWDTEN
-                  0xf80010          0x2 build/default/production/newmain.o
+                  0xf80010          0x2 build/default/debug/newmain.o
 
 .config_BKBUG     0xf8000e          0x2
- .config_BKBUG    0xf8000e          0x2 build/default/production/newmain.o
+ .config_BKBUG    0xf8000e          0x2 build/default/debug/newmain.o
 
 .config_MCLRE     0xf8000c          0x2
- .config_MCLRE    0xf8000c          0x2 build/default/production/newmain.o
+ .config_MCLRE    0xf8000c          0x2 build/default/debug/newmain.o
 
 .config_FWDTEN    0xf8000a          0x2
  .config_FWDTEN
-                  0xf8000a          0x2 build/default/production/newmain.o
+                  0xf8000a          0x2 build/default/debug/newmain.o
 
 .config_FCKSM     0xf80008          0x2
- .config_FCKSM    0xf80008          0x2 build/default/production/newmain.o
+ .config_FCKSM    0xf80008          0x2 build/default/debug/newmain.o
 
 .config_IESO      0xf80006          0x2
- .config_IESO     0xf80006          0x2 build/default/production/newmain.o
+ .config_IESO     0xf80006          0x2 build/default/debug/newmain.o
 
 .config_GCP       0xf80004          0x2
- .config_GCP      0xf80004          0x2 build/default/production/newmain.o
+ .config_GCP      0xf80004          0x2 build/default/debug/newmain.o
 
 .config_BSS       0xf80000          0x2
- .config_BSS      0xf80000          0x2 build/default/production/newmain.o
+ .config_BSS      0xf80000          0x2 build/default/debug/newmain.o
 
 .const              0x883c         0x1c load address 0x00083c  
- .const             0x883c         0x14 build/default/production/SendUartMessage.o
- .const             0x8850          0x8 build/default/production/newmain.o
+ .const             0x883c         0x14 build/default/debug/SendUartMessage.o
+ .const             0x8850          0x8 build/default/debug/newmain.o
 
 .text             0x000858        0x226
- .text            0x000858        0x226 build/default/production/PIC24FConfig.o
+ .text            0x000858        0x226 build/default/debug/PIC24FConfig.o
                   0x000858                  _PWMSetup
                   0x0009a2                  _setDutyCycle
                   0x0009b8                  _UART1Setup
@@ -1305,14 +1346,14 @@ __c30_signature
  .dinit           0x000a7e        0x198 data_init
 
 .text             0x000c16        0x1d2
- .text            0x000c16         0xca build/default/production/SendUartMessage.o
+ .text            0x000c16         0xca build/default/debug/SendUartMessage.o
                   0x000c16                  _SendUMessage
- .text            0x000ce0         0x6e build/default/production/CRC16.o
+ .text            0x000ce0         0x6e build/default/debug/CRC16.o
                   0x000ce0                  _CRC16_Calc
                   0x000d2a                  _CRC16_Check
- .text            0x000d4e         0x5a build/default/production/ComSlip.o
+ .text            0x000d4e         0x5a build/default/debug/ComSlip.o
                   0x000d4e                  _SendMessage
- .text            0x000da8         0x40 build/default/production/newmain.o
+ .text            0x000da8         0x40 build/default/debug/newmain.o
                   0x000da8                  _main
 
 .init.delay32     0x000de8         0x1c

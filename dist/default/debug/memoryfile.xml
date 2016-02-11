@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/production/WiMODSendUartMsg.X.production.elf">
+  <executable name="dist/default/debug/WiMODSendUartMsg.X.debug.elf">
     <memory name="data">
       <units>bytes</units>
       <length>1536</length>
-      <used>650</used>
-      <free>886</free>
+      <used>730</used>
+      <free>806</free>
     </memory>
     <memory name="program">
       <units>bytes</units>

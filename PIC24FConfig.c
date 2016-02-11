@@ -110,7 +110,7 @@ void UART1Setup(float baudrate, float fosc)
 }
 
 
-//UART transmit function, parameter Ch is the character to be sended
+//UART1 transmit function, parameter Ch is the character to be sended
 void UART1PutChar(char Ch)
 {
    //transmit ONLY if TX buffer is full
@@ -118,7 +118,7 @@ void UART1PutChar(char Ch)
        U1TXREG = Ch;
 }
 
-//UART receive function, returns the value received.
+//UART1 receive function, returns the value received.
 char UART1GetChar()
 {
     char Rxdata;
@@ -129,6 +129,36 @@ char UART1GetChar()
 
     return Rxdata;
 }
+
+/**************************************************************************************************************
+ * UART2Setup : Configuration of uart2 and calculate the value of 16 bits BRG(Baud Rate Generator) as a
+ *              function of parameters baudrate and fosc
+ * Parameters : baudrate,float, desired speed
+ *              fosc,float, frequency oscillator in mega hertz (MHZ)
+ *************************************************************************************************************/
+void UART2Setup(float baudrate, float fosc)
+{
+    U2MODE = ENABLE_BIT | IRDA_ENABLE_BIT | WAKE_ENABLE | LOOPBACK_MODE | ENABLE_AUTO_MODE |  PARITY_DATA_SELECT | STOP_BIT_SELECT;
+    U2MODEbits.BRGH = 1;         // Disable the divider
+    U2BRG = ((fosc*1E6*4.0/2.0)/(4.0*baudrate))/2-1.0;   //set baud speed
+
+    IFS1bits.U2RXIF = 0;
+    
+    //TODO Terminer le setup possible demande au professeur pour choisir les registres a initilisé
+
+
+}
+//UART2 receive function, returns the value received.
+char UART2GetChar()
+{
+    char car;
+    while(IFS1bits.U2RXIF == 0);
+    car = U1RXREG;
+    IFS1bits.U2RXIF = 0;
+
+    return car;
+}
+
 
 
 /*******************************************************************************************************
