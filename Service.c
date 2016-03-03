@@ -8,8 +8,8 @@
  *
  ************************************************************************************************************/
 
-#include "xc.h"
-#include "uart.h"
+#include <xc.h>
+#include <uart.h>
 #include "AllParameters.h"
 #include <string.h>
 

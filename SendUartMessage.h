@@ -11,7 +11,7 @@
 #ifndef SENDUARTMESSAGE_H
 #define	SENDUARTMESSAGE_H
 
-#include "GenericTypeDefs.h"
+#include <GenericTypeDefs.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include "CRC16.h"

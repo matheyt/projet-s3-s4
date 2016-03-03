@@ -13,8 +13,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "uart.h"
-#include "adc.h"
+#include <uart.h>
+#include <adc.h>
 
 #ifdef	__cplusplus
 extern "C" {
@@ -65,6 +65,8 @@ char UART2GetChar();
  * Setup 10 bits ADC converter using channel 5 and 11 whose alternates between multiplexer A and B
  *******************************************************************************************************/
 void ADCSetup();
+
+void UART2PutChar(char Ch);
 
 
 #ifdef	__cplusplus

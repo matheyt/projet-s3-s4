@@ -34,8 +34,8 @@
 #include "ConfigurationBits.h"
 #include "PIC24FConfig.h"
 #include <libpic30.h>
-#include "uart.h"
-#include "adc.h"
+#include <uart.h>
+#include <adc.h>
 #include <math.h>
 #include "CRC16.h"
 #include "SendUartMessage.h"
@@ -46,12 +46,13 @@ extern float volatile gl_pr2;
 
 int main() {
     char Message[80]; // Payload size 100
-
+    char position;
 
     /**************** Initialisation of destination address *****************/
     Addr ad;
     ad.destgroupAddr = DEST_GROUP_ADDR;
     ad.destdevAddr = DEST_DEVICE_ADDR;
+    
 
 
    
@@ -59,9 +60,15 @@ int main() {
     UART1Setup(BAUDRATE, FOSC);
     /********** Setup UART1 *********/
     
+    /********** Setup UART2 *********/
+    UART2Setup(4800, FOSC);
+    /********** Setup UART2 *********/
+    
     /* Setup I/O port (For testing LED) */
     TRISBbits.TRISB8 = 0;           // Set port B8 as output
     TRISBbits.TRISB15 = 0;          // Set port B15 as output
+    
+   
     gl_synchro = 0;
     
     //printf("Sampling:.....\n\r");
@@ -74,9 +81,12 @@ int main() {
         LATBbits.LATB8 = 0;
        sprintf(Message, "bonjour");
        // sprintf(Message, "%d",numTram++);
-        SendUMessage(ad, Message, strlen(Message));
+           SendUMessage(ad, Message, strlen(Message));
+        position=UART2GetChar();
+        //sprintf(position, "a");
+        //UART2PutChar(position);
         __delay_ms(100);            // Without delay 500ms for each sending, WiMOD module will block for receiver part
-
-       
+        
+        
     }
 }

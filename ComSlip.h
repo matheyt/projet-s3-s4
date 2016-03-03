@@ -14,7 +14,7 @@
 #define	COMSLIP_H
 
 #include <stdbool.h>
-#include "GenericTypeDefs.h"
+#include <GenericTypeDefs.h>
 
 #ifdef	__cplusplus
 extern "C" {
