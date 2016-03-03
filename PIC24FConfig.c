@@ -142,11 +142,11 @@ void UART2Setup(float baudrate, float fosc)
     OpenUART2(UART_EN | UART_MODE_SIMPLEX | UART_IDLE_STOP | UART_BRGH_FOUR | UART_IrDA_DISABLE | UART_DIS_ABAUD | UART_DIS_LOOPBACK |UART_DIS_WAKE  | UART_NO_PAR_8BIT | UART_1STOPBIT |UART_UEN_00
             ,UART_TX_ENABLE| UART_INT_TX_EACH_CHAR | UART_INT_RX_CHAR ,u2brg);
    
-    U2STAbits.URXDA=1;
   IFS1bits.U2RXIF = 0;
    IEC1bits.U2RXIE = 1;         // enable UART2 Received intrrupt
    IPC7bits.U2RXIP = 4;         // UART2 Received interrupt priority level 4é
-   
+   INTCON1bits.NSTDIS = 1;      // Interrupt nesting is disabled
+   SRbits.IPL = 3;
 
 
 }
@@ -161,10 +161,10 @@ char UART2GetChar()
 void UART2PutChar(char Ch)
 {
    //transmit ONLY if TX buffer is full
-   /*while(BusyUART2());
-      WriteUART2(Ch);*/
-    while(U2STAbits.UTXBF == 1);
-       U2TXREG = Ch;
+   while(BusyUART2());
+      WriteUART2( Ch);
+    //while(U2STAbits.UTXBF == 1);
+       //U2TXREG = Ch;
 }
 
 

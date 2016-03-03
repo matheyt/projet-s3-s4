@@ -61,7 +61,7 @@ int main() {
     /********** Setup UART1 *********/
     
     /********** Setup UART2 *********/
-    UART2Setup(4800, FOSC);
+    UART2Setup(BAUDRATE, FOSC);
     /********** Setup UART2 *********/
     
     /* Setup I/O port (For testing LED) */
@@ -78,15 +78,16 @@ int main() {
      
         /************************** Send Message ********************************/
         // Convert float->dexibel->string and insert string to array string using sprintf
-        LATBbits.LATB8 = 0;
-       sprintf(Message, "bonjour");
+        LATBbits.LATB7 = 0;
+        TRISBbits.TRISB0=1;
+        //sprintf(Message, "bonjour");
        // sprintf(Message, "%d",numTram++);
-           SendUMessage(ad, Message, strlen(Message));
-        position=UART2GetChar();
+           //SendUMessage(ad, Message, strlen(Message));
+        //position=UART2GetChar();
         //sprintf(position, "a");
-        //UART2PutChar(position);
+        UART1PutChar("a");
         __delay_ms(100);            // Without delay 500ms for each sending, WiMOD module will block for receiver part
-        
+
         
     }
 }
